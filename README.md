@@ -74,6 +74,7 @@ To run this project locally, ensure you have the following installed:
 
 - Frontend: Angular and NG-ZORRO
 - Backend: Node JS
+- Database: Firebase
 - Hardware: Esp32 & MFRCC 522
 
 ## LICENSE
