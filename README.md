@@ -70,6 +70,12 @@ To run this project locally, ensure you have the following installed:
 - Admin dashboard for managing events and access control
 - Fast check-in/check-out flow
 
+## TECHNOLOGIES USED
+
+- Frontend: Angular and NG-ZORRO
+- Backend: Node JS
+- Hardware: Esp32 & MFRCC 522
+
 ## LICENSE
 
 See the LICENSE file for more information.
