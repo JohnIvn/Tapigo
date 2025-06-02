@@ -3,8 +3,8 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import http from "http";
-import { Server } from "socket.io";
 import db from "./database.js";
+import { initializeSocket } from "./Socket/serverSocket.js";
 
 dotenv.config();
 const app = express();
@@ -15,30 +15,11 @@ app.use(cors());
 
 const server = http.createServer(app);
 
-const io = new Server(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-  },
-});
-
-io.on("connection", (socket) => {
-  console.log("A user connected:", socket.id);
-
-  socket.on("message", (data) => {
-    console.log("Message from client:", data);
-
-    socket.emit("message", `Server received: ${data}`);
-  });
-
-  socket.on("disconnect", () => {
-    console.log("User disconnected:", socket.id);
-  });
-});
+initializeSocket(server);
 
 async function initializeApp() {
   try {
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT;
     server.listen(PORT, () => {
       console.log(`Server listening on port ${PORT}`);
     });

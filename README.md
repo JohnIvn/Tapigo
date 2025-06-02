@@ -60,7 +60,6 @@ To run this project locally, ensure you have the following installed:
 
 6. Access the Application (Locally):
    Open your browser and go to:
-   http://localhost:3000
 
 ## FEATURES
 
