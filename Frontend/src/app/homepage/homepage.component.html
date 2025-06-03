@@ -1,1 +1,145 @@
-<p>homepage works!</p>
+<div class="homepage-container">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Our Modern Platform</h1>
+      <p class="hero-subtitle">
+        Experience the future of digital solutions with our cutting-edge
+        technology
+      </p>
+      <div class="hero-actions">
+        <p-button
+          label="Get Started"
+          icon="pi pi-arrow-right"
+          [raised]="true"
+        ></p-button>
+        <p-button label="Learn More" styleClass="p-button-outlined"></p-button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img
+        src="https://primefaces.org/cdn/primeng/images/demo/banner/primeng.png"
+        alt="Hero Image"
+      />
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="section-header">
+      <p-divider align="center">
+        <span class="p-tag">Features</span>
+      </p-divider>
+      <h2>Why Choose Our Platform</h2>
+      <p class="section-description">
+        Discover what makes us different and how we can help you succeed
+      </p>
+    </div>
+
+    <div class="features-grid">
+      @for (feature of features; track feature.title) {
+      <div class="feature-card">
+        <i [class]="feature.icon"></i>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+      }
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Join thousands of satisfied customers who trust our platform</p>
+      <div class="cta-form">
+        <input pInputText placeholder="Enter your email" />
+        <p-button label="Subscribe" icon="pi pi-send"></p-button>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-content">
+      <!-- Company Info -->
+      <div class="footer-section">
+        <div class="footer-logo">
+          <img
+            src="https://primefaces.org/cdn/primeng/images/primeng.svg"
+            alt="Logo"
+            width="120"
+          />
+        </div>
+        <p class="footer-description">
+          Our modern platform provides cutting-edge digital solutions to help
+          your business thrive in the digital age.
+        </p>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <i class="pi pi-facebook"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="pi pi-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="pi pi-linkedin"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="pi pi-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">Mobile Apps</a></li>
+          <li><a href="#">Cloud Solutions</a></li>
+          <li><a href="#">UI/UX Design</a></li>
+          <li><a href="#">Digital Marketing</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-section">
+        <h3 class="footer-heading">Contact Us</h3>
+        <ul class="footer-contact">
+          <li>
+            <i class="pi pi-map-marker"></i>
+            <span>123 Tech Street, Silicon Valley, CA 94025</span>
+          </li>
+          <li>
+            <i class="pi pi-phone"></i>
+            <span>+1 (555) 123-4567</span>
+          </li>
+          <li>
+            <i class="pi pi-envelope"></i>
+            <span>info&#64;modernplatform.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p-divider></p-divider>
+      <div class="footer-bottom-content">
+        <p>© 2023 Modern Platform. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
