@@ -1,4 +1,5 @@
 import { Server } from "socket.io";
+import { handleRfid } from "../Controllers/rfidController.js";
 
 let io;
 
@@ -17,6 +18,11 @@ export function initializeSocket(server) {
       console.log("Message from client:", data);
 
       socket.emit("message", `Server received: ${data}`);
+    });
+
+    socket.on("rfid", (data) => {
+      console.log("Received RFID data:", data);
+      handleRfid(data, socket);
     });
 
     socket.on("disconnect", () => {
