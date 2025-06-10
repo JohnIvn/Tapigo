@@ -27,6 +27,17 @@ const SignUp = async (req, res) => {
       role: role || "User",
     });
 
+    const analyticsRef = db.collection("Analytics").doc("signUpStats");
+    await db.runTransaction(async (transaction) => {
+      const doc = await transaction.get(analyticsRef);
+      if (!doc.exists) {
+        transaction.set(analyticsRef, { totalSignUps: 1 });
+      } else {
+        const current = doc.data().totalSignUps || 0;
+        transaction.update(analyticsRef, { totalSignUps: current + 1 });
+      }
+    });
+
     const token = jwt.sign(
       {
         username,
