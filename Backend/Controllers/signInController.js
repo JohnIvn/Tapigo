@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 import db from "../database.js";
+import admin from "firebase-admin";
 
 dotenv.config();
 
