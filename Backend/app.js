@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import signInRoute from "./Routes/signInRoutes.js";
 import signUpRoute from "./Routes/signUpRoutes.js";
+import newsletterRoute from "./Routes/newsletterRoute.js";
 import db from "./database.js";
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(cors());
 
 app.use("/signin", signInRoute);
 app.use("/signup", signUpRoute);
+app.use("/newsletter", newsletterRoute);
 
 async function initializeApp() {
   try {
