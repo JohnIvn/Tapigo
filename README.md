@@ -25,13 +25,15 @@ Whether you're managing events, transportation, or secure facilities, Tapigo sim
 
 - [Requirements](#requirements)
 - [Features](#features)
+- [Release](#release)
 - [Installation](#installation)
+- [Structure](#structure)
 - [Technologies Used](#technologies-used)
 - [License](#license)
 
 ---
 
-## REQUIREMENTS
+## Requirements
 
 To run this project locally, ensure you have the following installed:
 
@@ -52,6 +54,12 @@ To run this project locally, ensure you have the following installed:
 - Admin dashboard for managing events and access control
 - Fast check-in/check-out flow
   
+---
+
+## Release
+
+- Alternatively you can download the `.zip` file from the [Releases](https://github.com/JohnIvn/Tapigo/releases) section.
+
 ---
 
 ## Installation
@@ -169,6 +177,30 @@ yarn
    cd hardware
    yarn hardware
 ```
+---
+
+## Structure
+
+```bash
+/
+├── Backend/
+│   ├── Controllers/
+│   ├── Routes/
+│   └── Services/
+├── Frontend/
+│   ├── public/
+│   └── src/
+│   │   └── app/
+│   │       └── homepage/
+│   └── components/                    
+└── Hardware/
+│   ├── Controllers/
+│   ├── Services/
+│   └── Socket/
+└── Ino/
+    └── rfid/                  
+```
+
 ---
 
 ## Technologies-Used
